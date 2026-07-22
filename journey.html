@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About · UFO Witness Report Analyzer</title>
+<meta name="description" content="About my UFO witness report ML project, the code, and stuff that broke while I built it." />
+<style>
+  :root {
+    --bg: #0a0e18;
+    --card: #121a28;
+    --border: #2a3548;
+    --text: #e6ebf4;
+    --muted: #9aa8bc;
+    --accent: #e8a317;
+    --blue: #5eb8e8;
+    --font: system-ui, Segoe UI, Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 1.4rem 1rem 2.5rem; }
+  a { color: var(--blue); }
+  .top { margin-bottom: 1.1rem; }
+  .top h1 { font-size: 1.35rem; margin: 0 0 .25rem; font-weight: 700; }
+  .top p { margin: 0; color: var(--muted); font-size: .95rem; }
+  nav { margin: .9rem 0 1.2rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: #0f1520;
+    padding: .35rem .7rem;
+    border-radius: 8px;
+    font-size: .86rem;
+  }
+  nav a.main { background: var(--accent); color: #1a1205; border-color: var(--accent); font-weight: 650; }
+  section {
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 10px;
+    padding: 1rem 1.05rem;
+    margin-bottom: .85rem;
+  }
+  h2 { font-size: 1.02rem; margin: 0 0 .5rem; }
+  p { margin: 0 0 .65rem; color: var(--muted); }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: .2rem 0 0; padding-left: 1.15rem; color: var(--muted); }
+  li { margin: .35rem 0; }
+  code {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: .84em;
+    background: #0c121c;
+    padding: .05rem .3rem;
+    border-radius: 4px;
+    color: #c5e4f7;
+  }
+  footer { margin-top: 1rem; color: #667488; font-size: .78rem; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <h1>About this project</h1>
+      <p>School ML capstone. Code, how it works, and some bugs I ran into.</p>
+    </div>
+
+    <nav>
+      <a class="main" href="./">Back to the analyzer</a>
+      <a href="https://github.com/cdbz8a/ufo-witness-report-analyzer" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/cdbz8a/ufo-witness-report-analyzer/blob/main/UFO_Witness_Report_Analyzer_Colab.ipynb" target="_blank" rel="noopener">Notebook</a>
+      <a href="https://github.com/cdbz8a/ufo-witness-report-analyzer/raw/main/UFO_Witness_Report_Analyzer_Explanation.pdf">Explanation (download)</a>
+      <a href="https://github.com/cdbz8a/ufo-witness-report-analyzer/raw/main/UFO_Witness_Report_Analyzer_Presentation.pptx">Slides (download)</a>
+    </nav>
+
+    <section>
+      <h2>What this is</h2>
+      <p>
+        You paste a UFO sighting report (like what someone typed online) and the model tries to
+        guess the shape label. Triangle, disk, fireball, light, that kind of thing. It also shows
+        how sure it is and a couple keywords.
+      </p>
+      <p>
+        It's TF-IDF + Naive Bayes on public report data. Not ChatGPT. Not proof of aliens. Just
+        text classification for class.
+      </p>
+    </section>
+
+    <section>
+      <h2>Files / code</h2>
+      <ul>
+        <li><a href="https://github.com/cdbz8a/ufo-witness-report-analyzer" target="_blank" rel="noopener">GitHub repo</a></li>
+        <li><a href="https://github.com/cdbz8a/ufo-witness-report-analyzer/blob/main/UFO_Witness_Report_Analyzer_Colab.ipynb" target="_blank" rel="noopener">Colab notebook</a> (this is the real training code)</li>
+        <li><a href="https://github.com/cdbz8a/ufo-witness-report-analyzer/raw/main/UFO_Witness_Report_Analyzer_Explanation.pdf">Explanation.docx</a></li>
+        <li><a href="https://github.com/cdbz8a/ufo-witness-report-analyzer/raw/main/UFO_Witness_Report_Analyzer_Presentation.pptx">Presentation.pptx</a></li>
+        <li>This site: <code>index.html</code> + <code>journey.html</code></li>
+      </ul>
+      <p style="margin-top:.7rem">
+        To run the notebook: open it in Google Colab, Runtime → Run all. It downloads the data
+        itself.
+      </p>
+    </section>
+
+    <section>
+      <h2>How it works (roughly)</h2>
+      <ul>
+        <li>Grab a big public CSV of sighting reports</li>
+        <li>Clean the text (there's some weird HTML junk in there)</li>
+        <li>Keep 8 shapes that show up enough times. After that I'm at about 54k rows</li>
+        <li>Split train/test 80/20</li>
+        <li>TF-IDF turns words into numbers, Naive Bayes picks a shape</li>
+        <li>On the test set I got like 0.57 accuracy and about 0.51 macro-F1</li>
+      </ul>
+      <p style="margin-top:.7rem">
+        Most reports are labeled “light”, so accuracy alone is kind of cheating. Macro-F1 is more
+        honest because every shape counts more equally.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why I picked this for a capstone</h2>
+      <p>
+        I wanted something that wasn't a tiny toy dataset. Real text is messy. Also it's multi-class
+        (8 shapes) not just spam/not spam, and the light class is huge so you actually have to
+        think about metrics. Plus I could put a little website up so people can click around.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stuff that broke / confused me</h2>
+      <ul>
+        <li>
+          <strong>No header on the CSV.</strong> First time I loaded it, pandas used the first
+          report as the column names and everything looked cursed. Had to set the column names
+          myself.
+        </li>
+        <li>
+          <strong>Weird <code>&amp;#44;</code> things in the text.</strong> Turns out that's just a
+          comma in HTML form. Had to decode that or the words get weird.
+        </li>
+        <li>
+          <strong>Everything wants to be “light”.</strong> Makes sense because most training
+          examples are light. I started only looking at accuracy and it looked better than it was.
+          Macro-F1 and the confusion matrix fixed that.
+        </li>
+        <li>
+          <strong>“Three lights” isnt the same as triangle.</strong> The model reads words. If
+          nobody says triangle / triangular / craft, it often just says light. Kind of annoying
+          but that's how this model works.
+        </li>
+        <li>
+          <strong>“Circle of lights” bug on the website.</strong> The real Python model said
+          circle (~70%). The website said light. I had only put the top words for each shape into
+          the browser, so “circle” never hurt the light score, and I was missing bigrams like
+          “circle lights”. Fixed that and now they match better.
+        </li>
+        <li>
+          <strong>Hosting.</strong> I tried a free Flask host and it was slow / annoying for a
+          demo. So the public site is just static HTML on GitHub Pages.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Limits</h2>
+      <p>
+        Comments are short. Labels are noisy. It's not magic and it's not detecting real craft. If
+        the wording is vague it usually falls back to light.
+      </p>
+    </section>
+
+    <footer>School project. Public NUFORC-style data. Not affiliated with NUFORC.</footer>
+  </div>
+</body>
+</html>
