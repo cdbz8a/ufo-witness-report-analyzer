@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Credits · UFO Witness Report Analyzer</title>
+<meta name="description" content="The absurdly complete, mostly accurate end credits for a school ML project." />
+<style>
+  :root{
+    --bg:#070b14; --card:rgba(18,26,42,.9); --border:rgba(148,163,184,.2);
+    --text:#e8eef8; --muted:#94a3b8; --accent:#f59e0b; --blue:#38bdf8;
+    --font:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.5;}
+  .wrap{max-width:760px;margin:0 auto;padding:1.4rem 1rem 4rem;}
+  a{color:var(--blue);}
+  nav{display:flex;flex-wrap:wrap;gap:.4rem;margin:.4rem 0 1.4rem;}
+  nav a{color:var(--text);text-decoration:none;border:1px solid var(--border);background:#0f1520;padding:.35rem .7rem;border-radius:8px;font-size:.86rem;}
+  nav a.main{background:var(--accent);color:#1a1205;border-color:var(--accent);font-weight:650;}
+  .head{text-align:center;margin-bottom:1.6rem;}
+  .head h1{font-size:1.5rem;margin:.2rem 0 .1rem;letter-spacing:.02em;}
+  .head p{color:var(--muted);margin:0;font-style:italic;}
+  .roll-btn{display:inline-block;margin-top:.9rem;background:var(--accent);color:#1a1205;border:none;border-radius:8px;padding:.5rem 1rem;font-weight:650;cursor:pointer;font-size:.9rem;}
+  .credits{text-align:center;}
+  .sec{margin:1.9rem 0;}
+  .role{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;font-weight:700;margin-bottom:.7rem;}
+  .row{display:block;margin:.32rem 0;}
+  .row .name{font-weight:650;color:var(--text);}
+  .row .desc{color:var(--muted);font-size:.9rem;}
+  .row .desc::before{content:"— ";}
+  .fine{color:var(--muted);font-size:.86rem;max-width:560px;margin:1.2rem auto 0;}
+  .end{margin:2.4rem 0 .5rem;font-size:1.2rem;letter-spacing:.3em;color:var(--accent);}
+  footer{margin-top:2rem;text-align:center;color:#64748b;font-size:.78rem;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="main" href="./">Back to the analyzer</a>
+      <a href="journey.html">About / bugs / code</a>
+      <a href="https://github.com/cdbz8a/ufo-witness-report-analyzer" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+
+    <div class="head">
+      <h1>UFO WITNESS REPORT ANALYZER</h1>
+      <p>A Machine Learning Capstone. Roughly two months in the making.</p>
+      <button class="roll-btn" id="roll">&#9654; Roll credits</button>
+    </div>
+
+    <div class="credits" id="credits">
+
+      <div class="sec">
+        <div class="role">Starring</div>
+        <div class="row"><span class="name">Sammuel Hinton</span> <span class="desc">writer, director, producer, data janitor, chief debugger, and the person who actually did it</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">The Institution</div>
+        <div class="row"><span class="name">University of Calgary, Continuing Education</span> <span class="desc">for the accreditation and the letterhead</span></div>
+        <div class="row"><span class="name">RoboGarden Inc.</span> <span class="desc">for the platform, the missions, and delivering the bootcamp</span></div>
+        <div class="row"><span class="name">ICT 890-015, Machine Learning &amp; AI Bootcamp</span> <span class="desc">the arena</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">Instruction &amp; Guidance</div>
+        <div class="row"><span class="name">Omar Ashinawy</span> <span class="desc">instructor</span></div>
+        <div class="row"><span class="name">Hesam Damghanian</span> <span class="desc">instructor</span></div>
+        <div class="row"><span class="name">Amber Carney</span> <span class="desc">instructor and session wrangler</span></div>
+        <div class="row"><span class="name">Mostafa Moharram</span> <span class="desc">the 1:1 that got it unstuck</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">Funding &amp; Faith</div>
+        <div class="row"><span class="name">Fort McMurray First Nation #468</span> <span class="desc">for backing the education</span></div>
+        <div class="row"><span class="name">Brittany Mennie, Education Coordinator</span> <span class="desc">for keeping the file open and cheering it on</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">The Hardware, who never asked for any of this</div>
+        <div class="row"><span class="name">Acer</span> <span class="desc">for the laptop that ran hot and kept going</span></div>
+        <div class="row"><span class="name">Samsung</span> <span class="desc">for the extra screen real estate</span></div>
+        <div class="row"><span class="name">Bose</span> <span class="desc">for reading the code out loud so it could be studied hands-free</span></div>
+        <div class="row"><span class="name">The Alberta power grid</span> <span class="desc">for not blinking at the worst possible moment</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">The Operating System</div>
+        <div class="row"><span class="name">Ubuntu / Linux</span> <span class="desc">the workshop everything got built in</span></div>
+        <div class="row"><span class="name">The terminal</span> <span class="desc">for judging silently</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">Where It Ran</div>
+        <div class="row"><span class="name">Google Colab</span> <span class="desc">for the free muscle and the glorious &ldquo;Run all&rdquo; button</span></div>
+        <div class="row"><span class="name">Google</span> <span class="desc">for Chrome, Drive, Gmail, and search</span></div>
+        <div class="row"><span class="name">GitHub &amp; GitHub Pages</span> <span class="desc">for hosting the code and this very site, for free, forever (probably)</span></div>
+        <div class="row"><span class="name">Microsoft Teams</span> <span class="desc">for the lectures and the &ldquo;you&rsquo;re on mute&rdquo;</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">The Actual Machine Learning</div>
+        <div class="row"><span class="name">Python</span> <span class="desc">the language</span></div>
+        <div class="row"><span class="name">scikit-learn</span> <span class="desc">TF-IDF, Naive Bayes, the whole pipeline</span></div>
+        <div class="row"><span class="name">pandas</span> <span class="desc">for wrangling 80,000 rows without complaint</span></div>
+        <div class="row"><span class="name">NumPy</span> <span class="desc">for the math underneath the math</span></div>
+        <div class="row"><span class="name">Matplotlib &amp; Seaborn</span> <span class="desc">for making the imbalance impossible to ignore</span></div>
+        <div class="row"><span class="name">TF-IDF</span> <span class="desc">for deciding which words matter</span></div>
+        <div class="row"><span class="name">Multinomial Naive Bayes</span> <span class="desc">for making the call, naively but quickly</span></div>
+        <div class="row"><span class="name">Cosine similarity</span> <span class="desc">for finding the neighbors</span></div>
+        <div class="row"><span class="name">random_state = 42</span> <span class="desc">for making it all repeatable</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">The Data</div>
+        <div class="row"><span class="name">NUFORC (National UFO Reporting Center)</span> <span class="desc">the source</span></div>
+        <div class="row"><a href="https://github.com/planetsig/ufo-reports" target="_blank" rel="noopener"><span class="name">planetsig/ufo-reports</span></a> <span class="desc">for scrubbing and posting the CSV</span></div>
+        <div class="row"><span class="name">~80,000 anonymous witnesses</span> <span class="desc">the real stars. You saw something, you wrote it down. Thank you.</span></div>
+        <div class="row"><span class="name">The eight shapes</span> <span class="desc">triangle, disk, fireball, sphere, oval, cigar, circle, and light</span></div>
+        <div class="row"><span class="name">&ldquo;light&rdquo;</span> <span class="desc">for dominating the dataset and teaching everyone a lesson about accuracy</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">The Browser Magic</div>
+        <div class="row"><span class="name">JavaScript</span> <span class="desc">for running the model with no server</span></div>
+        <div class="row"><span class="name">HTML &amp; CSS</span> <span class="desc">for holding it all together</span></div>
+        <div class="row"><span class="name">An AI assistant</span> <span class="desc">for building this website&rsquo;s front-end. The machine learning is Sammuel&rsquo;s own work; the site had help.</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">Special Thanks</div>
+        <div class="row"><span class="name">The CSV with no header row</span> <span class="desc">the film&rsquo;s first antagonist</span></div>
+        <div class="row"><span class="name">Class imbalance</span> <span class="desc">the recurring villain</span></div>
+        <div class="row"><span class="name">Every bug that got squashed</span> <span class="desc">you made us stronger</span></div>
+        <div class="row"><span class="name">&amp;#44;</span> <span class="desc">a comma in disguise, unmasked in Act Two</span></div>
+        <div class="row"><span class="name">Caffeine</span> <span class="desc">executive producer</span></div>
+        <div class="row"><span class="name">The letters TF, IDF, and NB</span> <span class="desc">for fitting neatly on a slide</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="role">Disclaimer, the legal bit</div>
+        <p class="fine">No aliens were confirmed in the making of this project. It classifies text labels from public data. It does not prove any sighting is real. Not affiliated with NUFORC. Any resemblance to actual craft, living or imagined, is coincidental and word-based.</p>
+      </div>
+
+      <div class="end">THE END</div>
+      <p class="fine">Made in Alberta. Powered by curiosity, caffeine, and a suspiciously large amount of the word &ldquo;light.&rdquo;</p>
+
+    </div>
+
+    <footer>Sammuel Hinton &middot; ICT 890-015, University of Calgary Continuing Education &middot; samhinton310@gmail.com</footer>
+  </div>
+
+<script>
+  // optional slow auto-scroll "roll credits"
+  document.getElementById("roll").addEventListener("click", function () {
+    var y = 0;
+    var end = document.body.scrollHeight - window.innerHeight;
+    var t = setInterval(function () {
+      y += 1.4;
+      window.scrollTo(0, y);
+      if (y >= end) clearInterval(t);
+    }, 16);
+  });
+</script>
+</body>
+</html>

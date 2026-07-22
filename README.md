@@ -15,6 +15,7 @@ Instructors: Omar Ashinawy, Hesam Damghanian, Amber Carney · with thanks to Mos
 |------|------|
 | `index.html` | Website (GitHub Pages) |
 | `journey.html` | About page (how it works, bugs, links) |
+| `credits.html` | The full (and slightly ridiculous) end credits |
 | `UFO_Witness_Report_Analyzer_Colab.ipynb` | Notebook with the actual training code |
 | `UFO_Witness_Report_Analyzer_Presentation.pptx` | Slides |
 | `UFO_Witness_Report_Analyzer_Explanation.pdf` | Written explanation of the project |
